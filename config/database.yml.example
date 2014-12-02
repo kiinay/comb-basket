@@ -1,0 +1,19 @@
+connection: &connection
+  adapter: postgresql
+  host: localhost
+  username: YOUR_USERNAME
+  password: YOUR_PASSWORD
+  encoding: utf8
+  min_messages: warning #magic sauce
+
+development:
+  database: basket_development
+  <<: *connection
+
+test:
+  database: basket_test
+  <<: *connection
+
+production:
+  database: basket_production
+  <<: *connection
